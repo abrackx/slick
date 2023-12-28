@@ -2,7 +2,7 @@ import OBSWebSocket from 'obs-websocket-js';
 
 const obs = new OBSWebSocket();
 
-const blah = async (url: string, password: string) => {
+const setupObsWebSocket = async (url: string, password: string) => {
     try {
         const {
             obsWebSocketVersion,
@@ -17,4 +17,4 @@ const blah = async (url: string, password: string) => {
         console.error('Failed to connect', error.code, error.message);
     }
 };
-export default blah
+export default setupObsWebSocket

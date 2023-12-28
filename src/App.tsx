@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from "react"
 import OBSWebSocket from "obs-websocket-js";
-import blah from "./obs.tsx";
+import setupObsWebSocket from "./obs.tsx";
 
 type ObsContextType = {
     url?: string,
@@ -22,7 +22,7 @@ const LoginForm = () => {
     const {url} = data
     useEffect(() => {
         const callIt = async (url: string) => {
-            return await blah(url, password.value);
+            return await setupObsWebSocket(url, password.value);
         }
         if (url && url !== defaultObsContext.data.url) {
             const obs = callIt(url);
